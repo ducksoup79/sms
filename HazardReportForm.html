@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Hazard Reporting Form</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <script type="text/javascript">
+
+
+function validate_form ( )
+{
+    valid = true;
+
+    if ( document.hazard_form.haz_date.value == "" )
+    {
+        alert ( "Please select a date." );
+        valid = false;
+    }
+
+    return valid;
+}
+
+</script>
+        <div>
+            <section>
+                <form name="hazard_form" action="HazardReport.php" method="post" onsubmit="return validate_form ( );">
+                <h1 align="center">Hazard Report</h1>
+                
+                <p> <!--Should only show for SO -->
+                    <label for="hazard_num" style="width:150">
+                        <span>Hazard Number: </span>
+                    </label>
+                    <input type="text" id="hazard_num" name="hazard_num" style="width:200">
+                </p>
+                                                              
+                <p> 
+                    <label for="haz_date" style="width:150">
+                        <span>Date: </span>
+                    </label>
+                    <input type="text" id="haz_date" name="haz_date" style="width:200">
+                </p>
+                
+                <p> 
+                    <label for="aircraft_reg" style="width:150">
+                        <span>Aircraft Registration:</span>
+                    </label>
+                    <input type="text" id="aircraft_reg" name="aircraft_reg" style="width:200">
+                </p>
+                
+                <p> 
+                    <label for="aircraft_type" style="width:150">
+                        <span>Aircraft Type:</span>
+                    </label>
+                    <input type="text" id="aircraft_type" name="aircraft_type" style="width:200">
+                </p>
+                
+                <p> 
+                    <label for="departure" style="width:150">
+                        <span>Departure:</span>
+                    </label>
+                    <input type="text" id="departure" name="departure" style="width:200">
+                </p>
+                
+                <p> 
+                    <label for="arrival" style="width:150">
+                        <span>Arrival:</span>
+                    </label>
+                    <input type="text" id="arrival" name="arrival" style="width:200">
+                </p>
+                
+                <p> 
+                    <label for="hazard_detail" style="width:150">
+                        <span>Details of Hazard:</span>
+                    </label>
+                    <textarea name="hazard_detail" cols="100" rows="10"></textarea>
+                </p>
+                
+                <p> 
+                    <label for="name" style="width:150">
+                        <span>Name of Reporter:</span>
+                    </label>
+                    <input type="text" id="name" name="name" style="width:200">
+                </p>
+                
+                <p> 
+                    <label for="tel_number" style="width:150">
+                        <span>Contact Number::</span>
+                    </label>
+                    <input type="text" id="tel_number" name="tel_number" style="width:200">
+                </p>
+                
+                <p> 
+                    <label for="e_mail" style="width:150">
+                        <span>E-mail:</span>
+                    </label>
+                    <input type="text" id="e_mail" name="e_mail" style="width:200">
+                </p>
+                
+                <p> 
+                    <label for="lic_number" style="width:150">
+                        <span>License Number:</span>
+                    </label>
+                    <input type="text" id="lic_number" name="lic_number" style="width:200">
+                </p>
+                
+                <p> 
+                    <label for="status" style="width:150">
+                        <span>Status:</span>
+                    </label>
+                    <input type="text" id="status" name="status" style="width:200">
+                </p>
+                
+              <p> <input type="submit" value="Submit Report"></p>  
+                
+            </form>
+           </section> 
+        </div>
+    </body>
+</html>
