@@ -12,7 +12,7 @@ if ($_SESSION['auth']==True)
     print "\n<table>\n<tr>\n".
           "\n\t<th><h2>Open Hazards</h2></th>".
           "</tr>";
-    
+
     $result = queryMysql("SELECT hazard_reports.*, risk_assesment.risk_status"
             . " FROM hazard_reports"
             . " LEFT JOIN risk_assesment ON hazard_reports.hazard_num = risk_assesment.occurence_num WHERE status = 'open'");
@@ -31,7 +31,7 @@ if ($_SESSION['auth']==True)
 
 while($row = mysqli_fetch_array($result))
 {
- 
+
 echo "<tr>";
 echo "<td>" . $row['hazard_num'] . "</td>";
 echo "<td>" . $row['haz_date'] . "</td>";
@@ -63,8 +63,8 @@ if ($_SESSION['auth']==True)
     print "\n<table>\n<tr>\n".
           "\n\t<th><h2>Open Incidents</h2></th>".
           "</tr><br>";
-    
- 
+
+
     $result = queryMysql("SELECT incident_reports.*, risk_assesment.risk_status"
             . " FROM incident_reports"
             . " LEFT JOIN risk_assesment ON incident_reports.inc_num = risk_assesment.occurence_num WHERE status='open'");
@@ -95,7 +95,6 @@ echo "<td bgcolor=".checkStatus([$row['risk_status']]).">".$row['risk_status'] .
 echo "<td bgcolor=".checkStatus([$row['feedback']]).">".$row['feedback'] . "</td>";
 echo "<td><a href='checkRiskAss.php?inc_num=".$row['inc_num']."'>Risk Assesment</a></td>";
 echo "<td><a href='IncidentReportEdit.php?inc_num=".$row['inc_num']."'>Edit</a></td>";
-echo "<td><a href='delete_incident.php?inc_num=".$row['inc_num']."'>Delete</a></td>";
 echo "</tr>";
 }
 echo "</table>";

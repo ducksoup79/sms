@@ -24,7 +24,8 @@ if ($_SESSION['auth'] == True)
     . "<li><a href='quarterly_summary.php'>Create Quarterly Summary</a></li>"
     . "<li><a href='list_description.php'>Manage Database</a></li>"
     . "<li><a href='list_users.php'>Manage Users</a></li>"
-    . "<li><a href='portal.php'>Return to Portal</a></li></ul><br>";
+    . "<li><a href='portal.php'>Return to Portal</a></li><br>"
+    . "<li><a href='safety_assurance_dash.php'>Safety Assurance</a></li></ul><br>";
 
 }
 
