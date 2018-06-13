@@ -33,7 +33,7 @@ $e_mail = sanatizeString($_POST["e_mail"]);
 $lic_number = sanatizeString($_POST["lic_number"]);
 $feedback=  sanatizeString($_POST['feedback']);
 
-//check if risk assesment was closed, before closing incident
+//check if risk assesment was closed, before closing hazard
     if($ass_status=='closed' && $feedback=='send'){
         $status=sanatizeString($_POST['status']);
     }
@@ -41,13 +41,13 @@ $feedback=  sanatizeString($_POST['feedback']);
     else {
         $status='open';
     }
-    
+
  //check if feedback has been checked
     if($feedback=='send' && $ass_status=='closed'){
         $feedback=sanatizeString($_POST['feedback']);
         //send email with feedback to reporter
     }
-    
+
     else{
         $feedback='pending';
     }
@@ -191,7 +191,7 @@ queryMysql("UPDATE hazard_reports SET hazard_num='$hazard_num',"
                     </label>
                     <input type="checkbox" name="status" value="closed" <?php echo ($query2['status']=='closed' ? 'checked':'');?>><br>
                 </p>
-                
+
                 <p>
                     <label for="feedback" style="width:150">
                         <span>Feedback: </span>
@@ -205,7 +205,7 @@ queryMysql("UPDATE hazard_reports SET hazard_num='$hazard_num',"
                     </label>
                     <input type="text" id = "datepicker2" name="target_date" value="<?php echo $query2['target_date'];?>"<br>
                 </p>
-                                    
+
                 <p>
                     <label for="date_closed" style="width:150">
                         <span>Date Closed:</span>

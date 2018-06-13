@@ -54,20 +54,22 @@ if(isset($_POST['submit'])) //if the form is submitted, do the following
     $target_date=date_to_mysql(sanatizeString($_POST['target_date']));
     $closed_date=date_to_mysql(sanatizeString($_POST['closed_date']));
     $closed_responsible=sanatizeString($_POST['closed_responsible']);
+    $status = $_POST['status'];
+    $feedback = $_POST['feedback'];
 
     //check if risk assesment was closed, before closing incident
-    if($ass_status=='closed'){
+    if($ass_status=='closed' && $feedback=='send' && $status=='closed'){
         $status='closed';
     }
 
     else {
         $status='open';
     }
-    
+
     if($feedback=='send'){
         $feedback=  'send';
     }
-    
+
     else{
         $feedback='pending';
     }
@@ -104,7 +106,7 @@ if(isset($_POST['submit'])) //if the form is submitted, do the following
         . "contact_number='$contact_number',"
         . "e_mail='$e_mail',"
         . "report_date='$report_date',"
-	. "target_Date='$target_date',"
+      	. "target_Date='$target_date',"
         . "closed_date='$closed_date',"
         . "closed_responsible='$closed_responsible',"
         . "status='$status',"
@@ -377,7 +379,7 @@ if(isset($_POST['submit'])) //if the form is submitted, do the following
 
                 <fieldset> <!-- This should only be shown to the SO and not on the form-->
                     <legend>For Office Use</legend>
-                    
+
                          <p>
                             <label for="closed_date" style="width:150">
                                 <span>Closed Date: </span>
@@ -403,17 +405,17 @@ if(isset($_POST['submit'])) //if the form is submitted, do the following
                           <label for="status" style="width:150">
                               <span>Status: </span>
                           </label>
-                          <input type="checkbox" name="status" value="closed" <?php echo ($query2['status']=='closed' ? 'checked':'');?>><br>
+                          <input type="checkbox" id="status" value="closed" name="status" <?php if($query2['status']=='closed') echo 'checked="checked"';?>><br>
                       </p>
-                      
+
                       <p>
                           <label for="feedback" style="width:150">
                               <span>Feedback: </span>
                           </label>
-                          <input type="checkbox" name="feedback" value="send" <?php echo ($query2['feedback']=='send' ? 'checked':'');?>><br>
-                      </p>
+                          <input type="checkbox" id="feedback" value="send" name="feedback" <?php if($query2['feedback']=='send') echo 'checked="checked"';?>><br>
+                     </p>
 
-               
+
 
                 </fieldset>
 
