@@ -7,7 +7,7 @@ require_once 'header.php';
 
 $error = "";
 
-if ($_SESSION['auth']==True)
+if ($_SESSION['role']=='admin')
 {
     print "\n<table>\n<tr>\n".
           "\n\t<th><h2>Open Hazards</h2></th>".
@@ -58,7 +58,7 @@ echo "</table>";
 
 require_once 'header.php';
 
-if ($_SESSION['auth']==True)
+if ($_SESSION['role']=='admin')
 {
     echo "<br><br>";
     print "\n<table>\n<tr>\n".

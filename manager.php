@@ -14,7 +14,7 @@ require_once 'header.php';
 //$user = $_SESSION['user'];
 
 
-if ($_SESSION['auth'] == True)
+if ($_SESSION['role'] == "admin")
 {
     echo "<ul class='menu'>"
     . "<li><a href='AllOpen.php'>View Open Occurences</a></li>"

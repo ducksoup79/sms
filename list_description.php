@@ -4,7 +4,7 @@
  */
 require_once 'header.php';
 
-if ($_SESSION['auth']==True)
+if ($_SESSION['role']=='admin')
 {
     print "\n<table>\n<tr>\n".
           "\n\t<th>Descriptions</th>".

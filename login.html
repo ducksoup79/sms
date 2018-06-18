@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="login_style.css" type="text/css" rel="stylesheet"/>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            function do_login()
+            {
+             var email=$("#emailid").val();
+             var pass=$("#password").val();
+             if(email!="" && pass!="")
+             {
+
+              $.ajax
+              ({
+              type:'post',
+              url:'login.php',
+              data:{
+               do_login:"do_login",
+               email:email,
+               password:pass
+              },
+              success:function(response) {
+                console.log(response);
+              if(response=="success")
+              {
+                window.location.href="portal.php";
+              }
+              else
+              {
+
+                alert("Username or Password is incorrect");
+              }
+              }
+              });
+             }
+
+             else
+             {
+              alert("Please Fill All The Details");
+             }
+
+             return false;
+
+            }
+        </script>
+    </head>
+    <body>
+        <div id="wrapper">
+
+            <div id="login_form">
+             <h1>SMS LOGIN</h1>
+              <form method="post" action="login.php" onsubmit="return do_login();">
+                <input type="text" name="emailid" id="emailid" placeholder="Enter Email">
+                <br>
+                <input type="password" name="password" id="password" placeholder="***********">
+                <br>
+                <input type="submit" name="login" value="SUBMIT" id="login_button">
+             </form>
+
+            </div>
+
+        </div>
+    </body>
+</html>
