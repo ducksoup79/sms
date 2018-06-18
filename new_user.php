@@ -8,7 +8,7 @@
 require_once 'header.php';
 
 
-if ($_SESSION['auth']==True)
+if ($_SESSION['role']=='admin')
 {
 
 if (isset($_POST['submit']))

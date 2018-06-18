@@ -7,7 +7,7 @@ require_once 'header.php';
 
 $error = "";
 
-if ($_SESSION['auth']==True)
+if ($_SESSION['role']=='admin')
 {
     print "\n<table>\n<tr>\n".
           "\n\t<th>All Hazards on record</th>".

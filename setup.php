@@ -3,20 +3,20 @@
     <head>
         <title>Setting up database</title>
     </head>
-    
+
     <body>
         <h3>Setting up....</h3>
-        
+
         <?php
           require_once 'functions.php';
-          
+
           createTable('members',                //stores all pilots
                       'user VARCHAR(16),
                        pass VARCHAR(40),
                        user_level INT(1),
                        active VARCHAR(1),
                        INDEX(user(6))');
-          
+
           createTable('incident_reports',       //stores all incidents
                       'inc_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
                       inc_num INT,
@@ -48,12 +48,13 @@
                       name VARCHAR(30),
                       lic_number VARCHAR(10),
                       contact_number int(20),
-                      e_mail VARCHAR(30),             
+                      e_mail VARCHAR(30),
                       report_date DATETIME,
                       closed_date DATETIME,
-                      closed_responsible INT(1),      
-                      status VARCHAR(1)'); //Y/N
-          
+                      closed_responsible VARCHAR(10)
+                      status VARCHAR(10),
+                      feedback VARCHAR(10))');
+
           createTable('hazard_reports',    //stores all hazard reports
                       'hazreport_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
                       hazard_num INT(10),
@@ -68,10 +69,10 @@
                       e_mail VARCHAR(30),
                       lic_number VARCHAR(10),
                       status VARCHAR(1)');
-          
+
           createTable('hazards',              //stores all hazards
                       'haz_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-                      category INT(10),         
+                      category INT(10),
                       description TEXT,
                       likelihood INT(1),
                       severity INT(1),
@@ -79,7 +80,7 @@
                       mitigation TEXT,
                       mitigated_risk INT(2),
                       active VARCHAR(1)');
-          
+
          createTable('risk_assesment',
                      'assm_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
                      occurence_num INT(5),

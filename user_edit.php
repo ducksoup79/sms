@@ -14,7 +14,7 @@ $query1 = queryMysql("SELECT * from members WHERE user_id='$id'");
 $query2 = mysqli_fetch_array($query1);
 
 
-if ($_SESSION['auth']==True)
+if ($_SESSION['role']=='admin')
 {
 
 if (isset($_POST['submit']))
