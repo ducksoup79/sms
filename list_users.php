@@ -35,7 +35,7 @@ echo "<td>" . $row['e_mail'] . "</td>";
 echo "<td>" . $row['cell'] . "</td>";
 echo "<td>" . $row['lic_num'] . "</td>";
 echo "<td><a href='user_edit.php?user_id=".$row['user_id']."'>Edit</a></td>";
-echo "<td><a href='user_delete.php?user_id=".$row['user_id']."'>Delete</a></td>";
+echo "<td><a href='user_delete.php?user_id=".$row['user_id']."' onclick='return  confirm(\"Are you sure you want to delete this record?\")'>Delete</a></td>";
 echo "</tr>";
 }
 echo "</table>";

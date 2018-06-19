@@ -35,7 +35,7 @@ echo "<td>" . $row['status'] . "</td>";
 echo "<td><a href='checkRiskAss.php?inc_num=".$row['inc_num']."'>Risk Assesment</a></td>";
 echo "<td><a href='IncidentReportEdit.php?inc_num=".$row['inc_num']."'>Edit</a></td>";
 echo "<td><a href='report_incident.php?inc_num=".$row['inc_num']."'>Report</a></td>";
-echo "<td><a href='delete_incident.php?inc_num=".$row['inc_num']."'>Delete</a></td>";
+echo "<td><a href='delete_incident.php?inc_num=".$row['inc_num']."' onclick='return  confirm(\"Are you sure you want to delete this record?\")'>Delete</a></td>";
 
 echo "</tr>";
 }
