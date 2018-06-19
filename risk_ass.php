@@ -1,6 +1,6 @@
 <?php
 
-/* 
+/*
  * This script requires a occurence type and number before opening a new
  * risk assesment.
  */
@@ -8,11 +8,11 @@
 require_once 'header.php';
 
 //if ($_SESSION['auth']== True)
-        
+
 //{
   //  if(isset($_POST['submit'])) //if the form is submitted, do the following
 //{
-        
+
     //call the update query to save changes in form
     //$type=$_POST['type'];
     $occurence_num=$_POST['occurence_num'];
@@ -32,7 +32,7 @@ require_once 'header.php';
     $defence=nl2br($_POST['defence']);
     $defence_req=$_POST['defence_req'];
     $action_taken=$_POST['action_taken'];
-    $risk_status=$_POST['risk_status'];
+    $risk_status=$_POST['status'];
 
     if ($risk_status=='closed'){
 	$risk_status='closed';
@@ -41,7 +41,7 @@ require_once 'header.php';
         $risk_status='open';
     }
 
-             
+
     queryMysql("INSERT INTO risk_assesment VALUES('',"
         . "'$occurence_num',"
         . "'$description',"
@@ -61,7 +61,7 @@ require_once 'header.php';
         . "'$defence_req',"
         . "'$action_taken',"
         . "'$risk_status')");
-    
- 
+
+
     header('location:AllOpen.php');
     exit;

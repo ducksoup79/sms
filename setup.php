@@ -92,6 +92,9 @@
                      defence TEXT,
                      defence_req TEXT,
                      action_taken TEXT');
+
+        createTable('human_factors',
+                    '');
         ?>
     </body>
 </html>
