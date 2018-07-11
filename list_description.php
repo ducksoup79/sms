@@ -22,7 +22,7 @@ while($row = mysqli_fetch_array($result))
 echo "<tr>";
 echo "<td>" . $row['description'] . "</td>";
 echo "<td><a href='edit_description.php?desc_id=".$row['desc_id']."'>Edit</a></td>";
-echo "<td><a href='delete_description.php?desc_id=".$row['desc_id']."'>Delete</a></td>";
+echo "<td><a href='delete_description.php?desc_id=".$row['desc_id']."' onclick='return  confirm(\"Are you sure you want to delete this record?\")'>Delete</a></td>";
 echo "</tr>";
 }
 echo "</table>";
