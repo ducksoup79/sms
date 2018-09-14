@@ -46,84 +46,10 @@ document.getElementById("total_risk").value = totalValue;
                     <input type="text" id="occurence_num" name="occurence_num" style="width:200" value="<?php echo $occurence_num ?>">
                 </p>
 
-                <p>
-                    <label for="description" style="width:150">
-                        <span>Description: </span>
-                    </label>
-                    <?php
-                        echo ' <select name="description">';
-                        while($row=mysqli_fetch_array($description_query))
-                            {
-                             echo '<option value="' . ($row['description']) . '">'
-                                                    . ($row['description'])
-                                                    . '</option>';
-                            }
-                    echo '</select>';
-                    ?>
-
-                </p>
-
-                <p>
-                    <label for="category" style="width:150">
-                        <span>Category: </span>
-                    </label>
-                        <select name="category">
-                        <option value=""></option>
-                        <option value="MAN">Man</option>
-                        <option value="MACHINE">Machine</option>
-                        <option value="MEDIUM">Medium</option>
-                        <option value="MANAGMENT">Management</option>
-                        <option value="MONEY">Money</option>
-                     </select>
-
-                </p>
-
-                <p>
-                    <label for="hazards" style="width:150">
-                        <span>Hazards: </span>
-                    </label>
-                    <input type="text" id="hazards" name="hazards" style="width:200" size="2" onkeyup="getValues(5)"> The amount of hazards 1-4
+              
 
 
-                <p>
-                    <label for="hazard1" style="width:150">
-                        <span>Hazard 1: </span>
-                    </label>
-                    <input type="text" id="hazard1" name="hazard1" style="width:200" size="80" >
-                    <input type="text" id="risk1" name="risk1" style="width:20" value="0" size="2" onkeyup="getValues(1)"> Risk
-                </p>
 
-                <p>
-                    <label for="hazard2" style="width:150">
-                        <span>Hazard 2: </span>
-                    </label>
-                    <input type="text" id="hazard2" name="hazard2" style="width:200" size="80">
-                    <input type="text" id="risk2" name="risk2" style="width:20" value="0" size="2" onkeyup="getValues(2)"> Risk
-                </p>
-
-                <p>
-                    <label for="hazard3" style="width:150">
-                        <span>Hazard 3: </span>
-                    </label>
-                    <input type="text" id="hazard3" name="hazard3" style="width:200" size="80">
-                    <input type="text" id="risk3" name="risk3" style="width:20" value="0" size="2" onkeyup="getValues(3)"> Risk
-                </p>
-
-                <p>
-                    <label for="hazard4" style="width:150">
-                        <span>Hazard 4: </span>
-                    </label>
-                    <input type="text" id="hazard4" name="hazard4" style="width:200" size="80">
-                    <input type="text" id="risk4" name="risk4" style="width:20" value="0" size="2" onkeyup="getValues(4)"> Risk
-                </p>
-
-                <p>
-                    <label for="total_risk" style="width:150">
-                        <span>Total Risk: </span>
-                    </label>
-                    <input type="text" id="total_risk" name="total_risk" style="width:200" size="2">
-
-                </p>
 
                 <p>
                     <label for="root_cause" style="width:150">

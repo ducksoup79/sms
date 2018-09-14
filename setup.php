@@ -11,11 +11,14 @@
           require_once 'functions.php';
 
           createTable('members',                //stores all pilots
-                      'user VARCHAR(16),
+                      'user_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                       user_name VARCHAR(20),
+                       user_surname VARCHAR(20),
                        pass VARCHAR(40),
-                       user_level INT(1),
-                       active VARCHAR(1),
-                       INDEX(user(6))');
+                       user_role VARCHAR(10),
+                       e_mail VARCHAR(30),
+                       cell VARCHAR(15),
+                       lic_number VARCHAR(10)');
 
           createTable('incident_reports',       //stores all incidents
                       'inc_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -51,9 +54,9 @@
                       e_mail VARCHAR(30),
                       report_date DATETIME,
                       closed_date DATETIME,
-                      closed_responsible VARCHAR(10)
+                      closed_responsible VARCHAR(10),
                       status VARCHAR(10),
-                      feedback VARCHAR(10))');
+                      feedback VARCHAR(10)');
 
           createTable('hazard_reports',    //stores all hazard reports
                       'hazreport_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -72,26 +75,41 @@
 
           createTable('hazards',              //stores all hazards
                       'haz_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                      risk_ass_id INT(10),
                       category INT(10),
                       description TEXT,
                       likelihood INT(1),
                       severity INT(1),
                       risk INT(2),
                       mitigation TEXT,
+                      mitigated_likelihood INT(2),
+                      mitigated_severity INT(2),
                       mitigated_risk INT(2),
-                      active VARCHAR(1)');
+                      monitor VARCHAR(10),
+                      active VARCHAR(10)');
 
          createTable('risk_assesment',
                      'assm_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
                      occurence_num INT(5),
-                     hazard1 VARCHAR(125),
-                     hazard2 VARCHAR(125),
-                     hazard3 VARCHAR(125),
-                     hazard4 VARCHAR(125),
                      root_cause TEXT,
                      defence TEXT,
                      defence_req TEXT,
                      action_taken TEXT');
+
+          createTable('tickets',
+                      'id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                      user_id INT(11),
+                      message TEXT,
+                      is_active TINYINT,
+                      created_at DATETIME,
+                      time_spent INT(5)');
+
+          createTable('comments',
+                     'id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                      ticket_id INT(11),
+                      user_id INT(11),
+                      comment TEXT,
+                      created_at datetime');
 
         createTable('human_factors',
                     '');

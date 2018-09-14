@@ -40,7 +40,7 @@ echo "<td>" . $row['date_closed'] . "</td>";
 echo "<td><a href='checkRiskAss.php?inc_num=".$row['hazard_num']."'>Risk Assesment</a></td>";
 echo "<td><a href='HazardReportEdit.php?hazard_num=".$row['hazard_num']."'>Edit</a></td>";
 echo "<td><a href='report_hazard.php?hazard_num=".$row['hazard_num']."'>Report</a></td>";
-echo "<td><a href='delete_hazard.php?hazard_num=".$row['hazard_num']."' onclick='return  confirm(\"Are you sure you want to delete this record?\")'>Delete</a></td>";
+echo "<td><a href='delete_hazard_report.php?hazard_num=".$row['hazard_num']."' onclick='return  confirm(\"Are you sure you want to delete this record?\")'>Delete</a></td>";
 echo "</tr>";
 }
 echo "</table></html>";

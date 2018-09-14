@@ -13,6 +13,7 @@
  * $dbpass = '';
  *
  */
+ session_start();
 
 include "/var/www/html/sms/config/dbase_config.php";
 
@@ -91,7 +92,7 @@ function date_to_mysql($mydate){
 
 //sends a message to the provided e-mail containing the subject and message
 function my_mail($e_mail,$subject,$msg){
-    
+
   // Always set content-type when sending HTML email
   $headers = "MIME-Version: 1.0" . "\r\n";
   $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
@@ -116,29 +117,29 @@ function checkStatus($rowValue) {
     $color1 = '#FF0000';
     $color2 = '#ADFF2F';
     $color3 = '#D3D3D3';
-    
+
     $row_string = implode($rowValue);
-    
-       
+
+
     switch ($row_string) {
- 
+
         case "open":
              return $color1;
             break;
-        
+
         case "pending":
             return $color1;
             break;
-            
+
         case "closed":
              return $color2;
             break;
-        
+
         case "send":
             return $color2;
             break;
-            
+
         default:
              return $color3;
     }
-} 
+}

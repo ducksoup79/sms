@@ -44,7 +44,7 @@ echo "<td bgcolor=".checkStatus([$row['risk_status']]).">".$row['risk_status'] .
 echo "<td bgcolor=".checkStatus([$row['feedback']]).">".$row['feedback'] . "</td>";
 echo "<td><a href='checkRiskAss.php?inc_num=".$row['hazard_num']."'>Risk Assesment</a></td>";
 echo "<td><a href='HazardReportEdit.php?hazard_num=".$row['hazard_num']."'>Edit</a></td>";
-echo "<td><a href='delete_hazard.php?haz_num=".$row['hazard_num']."'>Delete</a></td>";
+echo "<td><a href='delete_hazard_report.php?haz_num=".$row['hazard_num']."' onclick='return  confirm(\"Are you sure you want to delete this record?\")'>Delete</a></td>";
 echo "</tr>";
 }
 echo "</table>";

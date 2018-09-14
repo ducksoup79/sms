@@ -2,9 +2,13 @@
 
 require_once 'header.php';
 
-$id = $_GET['hazard_num'];
+$id = $_POST['haz_id'];
 
-queryMysql("DELETE FROM hazard_reports WHERE hazard_num='$id'");
-queryMysql("DELETE FROM risk_assesment WHERE occurence_num='$id'");
+queryMysql("DELETE FROM hazards WHERE haz_id = '$id'");
 
-exit(header("Location:AllHazards.php"));
+if($query){
+  echo 'Hazard Deleted';
+}
+else{
+  echo 'Error: Could not delete hazard';
+}

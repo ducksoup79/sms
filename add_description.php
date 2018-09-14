@@ -1,14 +1,18 @@
 <?php
+//This script loads the date and duty time into the database
 
-/*
- * Adds a decription to the decription table to be used
- * with risk assesment
- */
+require_once "functions.php";
 
-require_once 'header.php';
-$error = "";
-$description=  sanatizeString($_POST['description']);
-queryMysql("INSERT INTO description VALUES('','$description')");
-header('Location:list_description.php');
-exit;
-?>
+
+
+	$description = sanatizeString($_POST['description']);
+
+	$query = queryMysql("INSERT INTO description VALUES(DEFAULT,'$description')");
+
+	//check if query were executed succesfully
+	if($query){
+		echo 'Description Added';
+	}
+	else{
+		echo 'Error: Description not added';
+	}

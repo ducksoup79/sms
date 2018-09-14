@@ -18,8 +18,9 @@ if ($_SESSION['role'] == "admin")
 {
     echo "<ul class='menu'>"
     . "<li><a href='AllOpen.php'>View Open Occurences</a></li>"
-    . "<li><a href='AllOcc.php'>View All Incidents</a></li>"
-    . "<li><a href='AllHazards.php'>View All Hazards</a></li>"
+    . "<li><a href='AllOcc.php'>View All Incidents Reports</a></li>"
+    . "<li><a href='AllHazards.php'>View All Hazard Reports</a></li>"
+    . "<li><a href='HazardReg.php'>Manage Hazards</a></li>"
     . "<li><a href='monthly_report.php'>Create Monthly Summary</a></li>"
     . "<li><a href='quarterly_summary.php'>Create Quarterly Summary</a></li>"
     . "<li><a href='list_description.php'>Manage Database</a></li>"
