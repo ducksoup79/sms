@@ -8,6 +8,11 @@ if(isset($_POST['do_login']))
  $email=$_POST['email'];
  $pass=$_POST['password'];
  $passhash =md5($pass);
+
+
+
+
+
  $select_data=queryMysql("select * from members where e_mail='$email' and pass='$passhash'");
  if($row=mysqli_fetch_array($select_data))
  {

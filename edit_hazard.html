@@ -1,0 +1,108 @@
+<div class="edit-hazard">
+  <form id="edit-hazard-form" action="" method="POST">
+        <h2 align="center">Edit Hazard</h2>
+
+    <label id="haz-id"></label>
+    <label id="risk-ass"></label>
+
+    <p>
+        <label for="category" class="label_width">
+            <span>Hazard Category: </span>
+        </label>
+        <select id="ed_category" name="category">
+          <option value="Man">Man</option>
+          <option value="Machine">Machine</option>
+          <option value="Medium">Medium</option>
+          <option value="Management">Management</option>
+          <option value="Money">Money</option>
+        </select>
+    </p>
+
+    <div class="description">
+
+    <p>
+        <label for="description" class="label_width">
+            <span>Description:</span>
+        </label>
+        <select id="ed_description_edit"></select>
+
+        <button type="button" id="ed_new_description" name="new_description">New</button>
+    </p>
+
+
+
+  </div>
+
+    <p>
+        <label for="likelihood" class="label_width">
+            <span>Likelihood:</span>
+        </label>
+        <input type="spinner" id="ed_likelihood" name="likelihood" value = "0" class="spinner" onfocusout="sum()">
+    </p>
+
+    <p>
+        <label for="severity" class="label_width">
+            <span>Severity:</span>
+        </label>
+        <input type="spinner" id="ed_severity" name="severity" value = "0" class="spinner" onfocusout="sum()">
+    </p>
+
+    <p>
+        <label for="risk" class="label_width">
+            <span>Risk:</span>
+        </label>
+        <div id="ed_risk" name="risk">0</div>
+    </p>
+
+    <p>
+        <label for="mitigation" style="width:150">
+            <span>Mitigation: </span>
+        </label>
+        <textarea id="ed_mitigation" name="mitigation" cols="100" rows="10"></textarea>
+    </p>
+
+    <p>
+        <label for="mit-likelihood" class="label_width">
+            <span>Mitigated Likelihood:</span>
+        </label>
+        <input type="spinner" id="ed_mit-likelihood" name="mit-likelihood" value = "0" class="spinner" onfocusout="sum2()">
+    </p>
+
+    <p>
+        <label for="mit-severity" class="label_width">
+            <span>Mitigated Severity:</span>
+        </label>
+        <input type="spinner" id="ed_mit-severity" name="mit-severity" value = "0" class="spinner" onfocusout="sum2()">
+    </p>
+
+    <p>
+        <label for="mit-risk" class="label_width">
+            <span>Mitigated Risk:</span>
+        </label>
+        <div id="ed_mit-risk">0</div>
+    </p>
+
+    <p>
+        <label for="monitor" class="label_width">
+            <span>Monitor:</span>
+        </label>
+        <input type="checkbox" id="ed_monitor" name="monitor">
+    </p>
+
+    <p>
+        <label for="active" class="label_width">
+            <span>Active:</span>
+        </label>
+        <input type="checkbox" id="ed_active" name="active">
+    </p>
+
+
+        <p> <button type="button" id="editHazardButton">Edit Hazard</button></p>
+  </form>
+<!--Create Hazard Form -->
+
+  <p><!--Show Risk Matrix to help safety manager while creating hazard-->
+    <img src="RiskMatrix.jpg">
+  </p>
+
+</div>

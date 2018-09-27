@@ -13,7 +13,7 @@
  * $dbpass = '';
  *
  */
- session_start();
+ //session_start();
 
 include "/var/www/html/sms/config/dbase_config.php";
 
